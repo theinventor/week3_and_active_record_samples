@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_30_184951) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_30_190344) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_30_184951) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.text "secret_note"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
