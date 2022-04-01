@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
 
 
+  def price_as_number
+    price.to_f
+  end
 end
