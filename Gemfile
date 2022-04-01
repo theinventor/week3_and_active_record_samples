@@ -79,6 +79,7 @@ group :test do
 end
 
 gem 'pg'
+gem 'faraday'
 
 group :production do
 

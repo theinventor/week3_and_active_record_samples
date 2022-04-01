@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Trips</h1>
+<% console %>
+<% if @result %>
+
+  <p><strong><%= JSON.parse(@result) rescue nil %></strong></p>
+<% end %>
 
 <div id="trips">
   <% @trips.each do |trip| %>

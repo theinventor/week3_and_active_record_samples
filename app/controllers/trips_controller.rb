@@ -7,7 +7,7 @@ class TripsController < ApplicationController
 
     @result = 'empty'
     if params[:geo_query]
-      base_url = "http://api.positionstack.com/v1/forward?access_key=#{ENV[:API_KEY]}&query="
+      base_url = "http://api.positionstack.com/v1/forward?access_key=#{ENV['API_KEY']}&query="
       @result = Faraday.get("#{base_url}#{params[:geo_query]}").body
     end
   end
