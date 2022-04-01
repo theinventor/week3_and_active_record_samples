@@ -2,10 +2,21 @@
 
 <h1>Trips</h1>
 <% console %>
-<% if @result %>
 
+<% if @result %>
   <p><strong><%= JSON.parse(@result) rescue nil %></strong></p>
 <% end %>
+
+<% if @trips %>
+  <p><strong><%= @trips.to_sql %></strong></p>
+<% end %>
+
+<div id='buttons' style="padding: 5px; border: 1px solid blue;">
+  <%= link_to "Clear", trips_path %>
+  <%= link_to "Geo Query", trips_path(geo_query: "seattle") %>
+  <%= link_to "like Chicago", trips_path(query: "chicago") %>
+  <%= link_to "Arriving on date", trips_path(date_query: "2022-11-01") %>
+</div>
 
 <div id="trips">
   <% @trips.each do |trip| %>

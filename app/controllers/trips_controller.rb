@@ -3,7 +3,13 @@ class TripsController < ApplicationController
 
   # GET /trips or /trips.json
   def index
-    @trips = Trip.all
+    if params[:query]
+      @trips = Trip.where("destination_city ilike ?", "%#{params[:query]}%")
+    elsif params[:date_query]
+      @trips = Trip.where(arrival_date: params[:date_query])
+    else
+      @trips = Trip.all
+    end
 
     @result = 'empty'
     if params[:geo_query]
