@@ -7,6 +7,8 @@ class TripsController < ApplicationController
       @trips = Trip.where("destination_city ilike ?", "%#{params[:query]}%")
     elsif params[:date_query]
       @trips = Trip.where(arrival_date: params[:date_query])
+    elsif params[:near]
+      @trips = Trip.near(params[:near], 100)
     else
       @trips = Trip.all
     end

@@ -81,6 +81,7 @@ end
 gem 'pg'
 gem 'faraday'
 gem 'faker'
+gem 'geocoder'
 
 group :production do
 
