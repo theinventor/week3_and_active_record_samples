@@ -82,6 +82,7 @@ gem 'pg'
 gem 'faraday'
 gem 'faker'
 gem 'geocoder'
+gem 'local_time'
 
 group :production do
 
