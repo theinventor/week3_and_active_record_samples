@@ -3,7 +3,7 @@
 <%= render @trip %>
 
 <div>
-  <%= link_to "Edit this trip", edit_trip_path(@trip) %> |
+  <%= link_to "Edit this trip", edit_trip_path(@trip), data: {turbo: false} %> |
   <%= link_to "Back to trips", trips_path %>
 
   <%= button_to "Destroy this trip", @trip, method: :delete %>

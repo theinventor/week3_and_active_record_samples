@@ -14,9 +14,11 @@
     <%= trip.destination_city %>
   </p>
 
+
+
   <p>
     <strong>Added at:</strong>
-    <%= local_time trip.created_at %>
+    <%= local_time trip.created_at %> (db: <%= trip.created_at %>)
   </p>
 
 </div>

@@ -69,6 +69,7 @@ group :development do
 
   gem "letter_opener"
 
+  gem 'faraday'
 end
 
 group :test do

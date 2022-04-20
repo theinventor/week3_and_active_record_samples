@@ -18,6 +18,12 @@
   <%= link_to "Geo near chicago", trips_path(near: "chicago") %>
 </div>
 
+
+<div data-controller='hello' style="border: 1px solid; margin-top: 10px">
+  <button data-action="hello#newDate">New Date</button>
+  <p data-hello-target="datey"></p>
+</div>
+
 <div id="trips">
   <% @trips.each do |trip| %>
     <%= render trip %>
