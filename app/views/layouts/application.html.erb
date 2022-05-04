@@ -17,7 +17,7 @@
 <br>
     <%= button_to "logout", destroy_user_session_path, method: :delete  %>
   <% else %>
-not logged in
+<%= link_to "sign up/in", '/users/sign_up' %>
   <% end %>
 
   <ul>
@@ -30,7 +30,7 @@ not logged in
   <ul>
     <li>UUID: <%= @cart.uuid %></li>
     <li>Created: <%= @cart.created_at %></li>
-    <li>Items: <%= @cart.cart_entries.map {|e| e.name} %></li>
+    <li>Items: <%= @cart.cart_entries.map {|e| e.product.name} %></li>
   </ul>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

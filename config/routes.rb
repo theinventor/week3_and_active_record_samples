@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :carts
+  resources :carts do
+    collection do
+      post :add_to_cart
+    end
+  end
   resources :products
   resources :trips
   devise_for :users
