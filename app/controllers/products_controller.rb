@@ -3,7 +3,13 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    if params[:genre]
+      sort_direction = params[:sort] == "Ascending" ? "ASC" : "DESC"
+      @products = Product.where(product_category: params[:genre]).order("name #{sort_direction}")
+
+    else
+      @products = Product.all.order(:name)
+    end
   end
 
   # GET /products/1 or /products/1.json

@@ -2,6 +2,18 @@
 
 <h1>Products</h1>
 
+<div id='search-thingy'>
+  <i><%= @sqlthing %></i>
+  <%= form_with method: :get do |form| %>
+    <label>Select Genre:</label>
+    <%= form.select :genre, Product.pluck(:product_category).uniq.sort, selected: params[:genre] %>
+
+    <label>Sort:</label>
+    <%= form.select :sort, ['Ascending','Descending'], selected: params[:sort] %>
+    <%= form.submit "Filter" %>
+  <% end %>
+</div>
+
 <div id="products">
   <% @products.each do |product| %>
     <%= render product %>
