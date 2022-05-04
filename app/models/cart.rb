@@ -21,7 +21,7 @@ class Cart < ApplicationRecord
     find_sole_by(user_id: user_id, checked_out_at: nil) rescue Cart.create(user_id: user_id)
   end
 
-  def self.their_cart_still_good?(uuid: )
+  def self.guest_cart_from_uuid(uuid: )
     find_by(uuid: uuid, checked_out_at: nil)
   end
 

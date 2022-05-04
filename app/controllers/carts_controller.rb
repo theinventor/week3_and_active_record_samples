@@ -12,7 +12,7 @@ class CartsController < ApplicationController
 
   def add_to_cart
     product = Product.find_by(id: params[:product_id])
-    @cart.cart_entries.create(product: product)
+    @cart.cart_entries.create(product: product, quantity: params[:quantity].presence || 1)
     redirect_to product_path(params[:product_id]), notice: "ok we did it!"
   end
 
