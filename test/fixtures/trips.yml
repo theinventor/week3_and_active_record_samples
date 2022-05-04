@@ -1,4 +1,16 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: trips
+#
+#  id               :bigint           not null, primary key
+#  arrival_date     :date
+#  departure_date   :date
+#  destination_city :string
+#  lattitude        :decimal(15, 10)
+#  longitude        :decimal(15, 10)
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
 
 one:
   arrival_date: 2022-04-01

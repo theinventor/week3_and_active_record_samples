@@ -37,3 +37,7 @@ cities.split("\n").each do |city|
   )
 
 end
+
+1000.times do |i|
+  Product.create name: Faker::Game.title, description: Faker::Fantasy::Tolkien.poem, price_retail_cents: [39.99, 49.99, 34.99, 29.99, 59.99, 69.99, 79.99].sample, product_category: Faker::Game.genre
+end
