@@ -25,6 +25,13 @@ not logged in
     <li><%= link_to "Shopping", products_path %></li>
     <li><%= link_to "Cart", carts_path %></li>
   </ul>
+
+  <p>cart stuff</p>
+  <ul>
+    <li>UUID: <%= @cart.uuid %></li>
+    <li>Created: <%= @cart.created_at %></li>
+    <li>Items: <%= @cart.cart_entries.map {|e| e.name} %></li>
+  </ul>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
