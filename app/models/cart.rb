@@ -28,4 +28,17 @@ class Cart < ApplicationRecord
   def setup_uuid
     uuid || self.uuid = SecureRandom.uuid
   end
+
+
+  def self.to_csv
+    attributes = %w{id user_id checked_out_at}
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |cart|
+        csv << attributes.map{ |attr| cart.send(attr) }
+      end
+    end
+  end
 end

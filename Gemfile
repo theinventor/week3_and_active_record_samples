@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 # my gems here
 #
 gem 'devise'
+gem 'csv'
 
 
 group :development, :test do

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reports/main'
+  get 'reports/tax'
   resources :carts do
     collection do
       post :add_to_cart

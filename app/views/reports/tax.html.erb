@@ -1,0 +1,15 @@
+<h1>Reports#tax</h1>
+<table>
+  <tbody>
+<% Trip.all.each do |trip| %>
+<tr>
+  <td><%= trip.created_at %></td>
+  <td><%= trip.destination_city %></td>
+</tr>
+<% end %>
+
+  </tbody>
+</table>
+
+
+<%= link_to "CSV", reports_tax_path(format: "csv") %>
